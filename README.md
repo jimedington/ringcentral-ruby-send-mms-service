@@ -25,9 +25,9 @@ HTTP Post to your Heroku app URL with the following parameters:
 - ringcentral_extension
 - ringcentral_password
 
-Example values for filetype:
--text/vcard
--image/jpeg
+Example values for filetype (no quotations):
+'text/vcard'
+'image/jpeg'
 
 ## Known Issues
 
