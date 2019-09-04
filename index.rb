@@ -14,6 +14,14 @@ RINGCENTRAL_PASSWORD = ENV['RINGCENTRAL_PASSWORD']
 
 post '/' do
     status 200
+
+    ringcentral_server_url = params['ringcentral_server_url']
+    ringcentral_client_id = params['ringcentral_client_id']
+    ringcentral_client_secret = params['ringcentral_client_secret']
+    ringcentral_username = params['ringcentral_username']
+    ringcentral_extension = params['ringcentral_extension']
+    ringcentral_password = params['ringcentral_password']
+
     receiver = params['receiver']
     text = params['text']
     file_url = params['file_url']
@@ -22,13 +30,13 @@ post '/' do
     tempfile = Down.download(file_url)
     file_type ||= tempfile.content_type
 
-    rc = RingCentral.new(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_SERVER_URL)
-    r = rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
+    rc = RingCentral.new(ringcentral_client_id, ringcentral_client_secret, ringcentral_server_url)
+    r = rc.authorize(username: ringcentral_username, extension: ringcentral_extension, password: ringcentral_password)
     puts r
     r = rc.post('/restapi/v1.0/account/~/extension/~/sms',
         payload: {
             to: [{ phoneNumber: receiver }],
-            from: { phoneNumber: RINGCENTRAL_USERNAME },
+            from: { phoneNumber: ringcentral_username },
             text: text
         },
         files: [

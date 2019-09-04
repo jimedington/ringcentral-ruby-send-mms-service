@@ -4,38 +4,30 @@
 ## Setup
 
 ```
-bundle install
-cp .env.sample .env
+Fork to private git of your own
 ```
 
-Edit `.env` file to specify your credentials
-
-
-## Run
-
-```
-ruby index.rb
-```
+Create Heroku app & synch to your fork
 
 
 ## Usage
 
-HTTP Post to http://localhost:4567 with the following parameters:
+HTTP Post to your Heroku app URL with the following parameters:
 
 - receiver
 - text
 - file_url
 - file_type
+- ringcentral_server_url
+- ringcentral_client_id
+- ringcentral_client_secret
+- ringcentral_username
+- ringcentral_extension
+- ringcentral_password
 
-For example:
-
-```
-curl -X POST http://localhost:4567 \
--F "receiver=6508888888" \
--F "text=hello world" \
--F "file_url=https://www.baidu.com/img/bd_logo1.png" \
--F "file_type=image/png"
-```
+Example values for filetype:
+text/vcard
+image/jpeg
 
 
 ## Deploy

@@ -81,6 +81,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   dotenv
@@ -88,5 +89,8 @@ DEPENDENCIES
   ringcentral-sdk
   sinatra
 
+RUBY VERSION
+   ruby 2.6.3p62
+
 BUNDLED WITH
-   2.1.0.pre.1
+   2.0.2
