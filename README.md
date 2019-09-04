@@ -29,3 +29,8 @@ Example values for filetype:
 text/vcard
 image/jpeg
 
+## Known Issues
+
+How it's coded right now only allows for 5 MMS per user per minute. The max allowable for MMS if I were to go the extra mile and code it properly would be 10 MMS per user per minute. This is an API limitation for MMS in general. The reason it's limited to 5 right now with how it's coded is because you're getting a new token each time you call the API. There is a way to store this token, but I was going for the quickest viable working solution (and 5 MMS per minute for us is well beyond what we need right now in our office).
+
+There's no GUI. Even going to your app's URL on Heroku yields a "Not Found". But the code works. I've tested and re-tested it. I've even taken this code to a new repository and tested on a new Heroku app successfully just by connecting the git repository to the Heroku app.
