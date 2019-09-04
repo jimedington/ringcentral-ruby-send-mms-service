@@ -3,11 +3,11 @@
 
 ## Setup
 
-```
-Fork to private git of your own
-```
+RingCentral - Create a RingCentral developer's account under your SuperAdmin account (it's FREE) at https://developers.ringcentral.com/. Create a private app name it what you want and select Platform Type "Server-Only (No UI)", and Permissions "SMS". When you commplete this step you have a Sandbox environment for your app to allow for testing the code found in this repository.
 
-Create Heroku app & synch to your fork
+Github - Create your own fork on Github from this (creating your own repository) OR simply download the files and upload to your own repository. This code is ready to test once you have your RingCentral app and you have a Heroku app synched with it (next step).
+
+Heroku - Create Heroku account to host your code on the cloud. Create an app, name it whatever you want & synch to your Github repository you created above. Upgrade your Dyno to Hobbyist so that your app doesn't fall asleep.
 
 
 ## Usage
@@ -29,9 +29,3 @@ Example values for filetype:
 text/vcard
 image/jpeg
 
-
-## Deploy
-
-You can deploy this app to any server with a public adress, so that you can access it from anywhere.
-
-You can also add some [password protection](http://recipes.sinatrarb.com/p/middleware/rack_auth_basic_and_digest) so that only you can use this service.
